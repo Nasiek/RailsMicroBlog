@@ -1,0 +1,12 @@
+<h1>Check out all the posts</h1>
+<p>
+	Look at all the buzz!
+</p>
+<% @posts.each do |post|%>
+<div>
+	<%= post.topic %>
+</div>
+<div>
+	<%= post.content %>
+</div>
+<%end%>

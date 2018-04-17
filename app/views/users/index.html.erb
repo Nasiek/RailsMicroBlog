@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome Page</title>
+</head>
+<body>
+<h1>
+	Scoop
+
+</h1>	
+<div>
+<%= form_for @user do |f| %>
+    <div>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+    </div>
+    <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+    <div>
+        <%= f.label :email_confirmation %>
+        <%= f.text_field :email_confirmation %>
+    </div>
+    <div>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </div>
+    <div>
+        <%= f.submit 'Create Account' %>
+    </div>
+<% end %>
+</div>
+</body>
+</html>

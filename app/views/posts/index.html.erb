@@ -1,12 +1,17 @@
+<!-- Posts Feed --> 
+
 <h1>Check out all the posts</h1>
 <p>
 	Look at all the buzz!
 </p>
 <% @posts.each do |post|%>
-<div>
-	<%= post.topic %>
+<div id="post_container">
+	<h2><%= post.topic %> </h2>
+</div>
+<div id="post_content">
+	<%= truncate(post.content, length: 75) %>
 </div>
 <div>
-	<%= post.content %>
+	<%= link_to 'Go to Full Post', post_path(post) %>
 </div>
 <%end%>

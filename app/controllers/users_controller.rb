@@ -4,8 +4,15 @@ class UsersController < ApplicationController
     @showuser = User.find(params[:id])
   end
 
+def myprofile
+@user = User.find(params[current_user])
+end
+
   def show
-    @user = User.find(params[:id])
+    @fname = User.find(params[:id]).fname
+    puts '******************'
+   @username= User.find(params[:id]).username
+   @user = User.find(params[:id])
   end
 
   def new

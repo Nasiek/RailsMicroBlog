@@ -1,2 +1,16 @@
 <h1>Posts#new</h1>
 <p>Find me in app/views/posts/new.html.erb</p>
+
+<h1>What's up?</h1>
+<%= form_for Post.new, url: posts_path do |f| %>
+<p>
+	<%= f.label :topic %><br>
+	<%= f.text_field :topic %>
+</p>
+<p>
+<%= f.label :content %>
+<%= f.text_area :content %>	
+</p>
+<p><%= f.submit %>
+</p>
+<% end %>

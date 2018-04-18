@@ -1,2 +1,13 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
+<p><strong>Topic:</strong>
+
+<%= @post.topic %>
+</p>
+<p>
+	<strong>Content:</strong>
+<%= @post.content %>
+</p>
+<p>
+	<%= link_to 'Back to all posts', posts_path%>
+</p>

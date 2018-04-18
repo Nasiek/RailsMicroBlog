@@ -1,2 +1,19 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+
+<div>
+<h2>Welcome to <%= @username %>'s Profile </h2>
+</div>
+
+
+<div>
+<h2><%= @fname %>'s Bio:</h2>
+</div>
+
+<div>
+	<strong>Home:</strong> <%= @user.home %> 
+	<br>
+	<strong>Email:</strong> <%= @user.email %><br>
+	<strong> Age:</strong> <%= @user.age %><br>
+	<strong>Member Since:</strong> <%= @user.created_at %>
+</div>

@@ -8,7 +8,9 @@
 <h1>
 	Scoop
 
-</h1>	
+</h1>
+
+<h2>Register for Scoop</h2>	
 <div>
 <%= form_for @user do |f| %>
     <div>
@@ -29,14 +31,35 @@
     </div>
     <div>
         <%= f.label :password %>
-        <%= f.text_field :password %>
+        <%= f.password_field :password %>
     </div>
     <div>
         <%= f.label :age %>
-        <%= f.password_field :age %>
+        <%= f.text_field :age %>
     </div>
     <div>
         <%= f.submit 'Create Account' %>
+    </div>
+<% end %>
+</div>
+<h2>Log In to Scoop</h2>
+<div>
+
+<%= form_for @showuser do |f| %>
+    <div>
+        <%= f.label :fname %>
+        <%= f.text_field :fname %>
+    </div>
+    <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+    <div>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </div>
+    <div>
+        <%= f.submit 'Log In' %>
     </div>
 <% end %>
 </div>

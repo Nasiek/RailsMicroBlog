@@ -11,9 +11,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(user_params)
-      if @user.save
-          redirect_to users_path
+    @comment = Comment.new(comment_params)
+      if @comment.save
+          redirect_to comments_path
       else
           render 'new'
   end
@@ -25,6 +25,8 @@ class CommentsController < ApplicationController
   end
 
   def delete
+    Comment.delete(params[:id])
+      redirect_to comment_path
   end
 
   def destroy
@@ -37,4 +39,12 @@ end
 def find_comment
      @comment = Comment.find(params[:id])
 end
+
+private
+
+  def comment_params
+      params.require(:comment).permit(:content)
+  end
+  def find_comment
+     @comment = Comment.find(params[:id])
 end

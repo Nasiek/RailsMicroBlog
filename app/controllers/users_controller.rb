@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
 def myprofile
 @user = User.find(params[current_user])
+
 end
 
   def show
@@ -13,6 +14,9 @@ end
     puts '******************'
    @username= User.find(params[:id]).username
    @user = User.find(params[:id])
+   @upost = User.find(params[:id]).posts
+
+
   end
 
   def new

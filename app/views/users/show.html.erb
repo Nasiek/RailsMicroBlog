@@ -17,3 +17,13 @@
 	<strong> Age:</strong> <%= @user.age %><br>
 	<strong>Member Since:</strong> <%= @user.created_at %>
 </div>
+<div>
+<p>See <%= @user.fname %>'s Posts 
+	<br>
+	<% @upost.each do |p|%>
+	<strong><%= p.topic %></strong>
+	<p><%= p.content %></p>
+	<p><%=p.created_at.strftime("%B %d, %Y") %></p>
+	<p><a href="">See Full Post</a></p>
+	<% end %>
+</div>

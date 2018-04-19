@@ -1,2 +1,27 @@
 <h1>Users#myprofile</h1>
 <p>Find me in app/views/users/myprofile.html.erb</p>
+<h1>Welcome to your profile, <%= @user.fname %> Profile</h1>
+<div>
+    <h2>Profile Details </h2>
+</div>
+<br>
+<br>
+<p>
+	Name : <%= @fname %>
+</p>
+<p>
+	Username: <%= @username %> 
+</p>
+<p>
+	Age: <%= user.age %>
+</p>
+<p>
+	Home: <%= user.home %>
+</p>
+<p>
+	Email: <%= user.email %>
+</p>
+<p>User Since: <%= user.created_at.strftime("%B %d, %Y") %>
+</p>
+<p>Last Profile Update: <%= @user.updated_at..strftime("%B %d, %Y")%> 
+</p>

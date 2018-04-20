@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   def index
     @user = User.new
     @showuser = User.find(params[:id])
+
   end
 
 def myprofile
-@user = User.find(params[current_user])
+@user = current_user
 
 end
 
@@ -53,7 +54,7 @@ private
   end
 
   def find_user
-     @user = User.find(params[:id])
+     @user = User.find(params[:username,:password])
 end
 
 end

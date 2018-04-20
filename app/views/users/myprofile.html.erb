@@ -13,15 +13,15 @@
 	Username: <%= @username %> 
 </p>
 <p>
-	Age: <%= user.age %>
+	Age: <%= @user.age %>
 </p>
 <p>
-	Home: <%= user.home %>
+	Home: <%= @user.home %>
 </p>
 <p>
-	Email: <%= user.email %>
+	Email: <%= @user.email %>
 </p>
-<p>User Since: <%= user.created_at.strftime("%B %d, %Y") %>
+<p>User Since: <%= @user.created_at.strftime("%B %d, %Y") %>
 </p>
-<p>Last Profile Update: <%= @user.updated_at..strftime("%B %d, %Y")%> 
+<p>Last Profile Update: <%= @user.updated_at.strftime("%B %d, %Y")%> 
 </p>

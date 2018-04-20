@@ -8,6 +8,19 @@
 	<strong>Content:</strong>
 <%= @post.content %>
 </p>
+<div class="comments">
+
+	<%= @post.comments.each do |c| %> 
+	<p>
+	<%= c.user.username %>
+	</p>
+	<%= c.comment %>
+	<p>
+	<%= c.updated_at.strftime("%B %d, %Y") %>
+	</p>
+	<% end %>
+
+</div>
 <p>
 	<%= link_to 'Back to all posts', posts_path%>
 </p>

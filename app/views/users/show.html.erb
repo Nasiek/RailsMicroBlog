@@ -15,7 +15,7 @@
 	<br>
 	<strong>Email:</strong> <%= @user.email %><br>
 	<strong> Age:</strong> <%= @user.age %><br>
-	<strong>Member Since:</strong> <%= @user.created_at %>
+	<strong>Member Since:</strong> <%= @user.created_at.strftime("%B %d, %Y") %>
 </div>
 <div>
 <p>See <%= @user.fname %>'s Posts 
@@ -24,6 +24,7 @@
 	<strong><%= p.topic %></strong>
 	<p><%= p.content %></p>
 	<p><%=p.created_at.strftime("%B %d, %Y") %></p>
-	<p><a href="">See Full Post</a></p>
+	<!-- <p><a href="">See Full Post</a></p> -->
+	<p><%= link_to 'See Full Post', post_path(p) %></p>
 	<% end %>
 </div>

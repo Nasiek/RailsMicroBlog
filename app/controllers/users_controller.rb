@@ -56,12 +56,13 @@ end
   end
 
   def delete
-    User.delete(params[:id])
-      redirect_to users_path
+    
   end
 
   def destroy
-  end
+  User.delete(params[:id])
+      redirect_to login_path
+    end
 
 private
 

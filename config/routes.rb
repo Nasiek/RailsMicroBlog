@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   get 'sessions/new'
+  get 'users/all' => 'users#all'
   resources :users
   resources :posts
   # resources :users do
   # 	resources :posts
   # end
-  resources :comments 
+  resources :comments, except: [:show, :index]
   root 'users#index'
   get '/myprofile' => 'users#myprofile'
 

@@ -1,2 +1,18 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+
+
+Want to change or take back what you said? Do it here:
+
+<%= form_for @post  do |f| %>
+<p>
+	<%= f.label :topic %><br>
+	<%= f.text_field :topic %>
+</p>
+<p>
+<%= f.label :content %>
+<%= f.text_area :content %>	
+</p>
+<p><%= f.submit %>
+</p>
+<% end %>
+
+<%= link_to 'Delete this post', post_path(@post), method: :delete %>

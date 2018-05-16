@@ -1,8 +1,8 @@
 <h1>Posts#new</h1>
 <p>Find me in app/views/posts/new.html.erb</p>
 
-<h1>What's up?</h1>
-<%= form_for :post, url: posts_path do |f| %>
+<h1>What's up <%= @user.username %>? </h1>
+<%= form_for Post.new, url: posts_path do |f| %>
 <p>
 	<%= f.label :topic %><br>
 	<%= f.text_field :topic %>

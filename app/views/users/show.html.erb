@@ -18,7 +18,7 @@
 	<strong>Member Since:</strong> <%= @user.created_at.strftime("%B %d, %Y") %>
 </div>
 <div>
-<p>See <%= @user.fname %>'s Posts 
+<p>Check out <%= @user.fname %>'s Posts Below: 
 	<br>
 	<% @upost.each do |p|%>
 	<strong><%= p.topic %></strong>

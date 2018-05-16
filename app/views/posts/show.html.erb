@@ -1,26 +1,43 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
 <p><strong>Topic:</strong>
 
 <%= @post.topic %>
 </p>
 <p>
 	<strong>Content:</strong>
-<%= @post.content %>
+Posted by, <%= link_to @post.user.username, user_path(@post.user) %>,<%= @post.content %>
 </p>
+<br>
 <div class="comments">
 
-	<%= @post.comments.each do |c| %> 
+	<% @post.comments.each do |c| %> 
 	<p>
-	<%= c.user.username %>
+	<%= c.user.username %> says:
 	</p>
+	<p>
 	<%= c.comment %>
+	<p/>
 	<p>
-	<%= c.updated_at.strftime("%B %d, %Y") %>
+	on: <%= c.updated_at.strftime("%B %d, %Y") %>
 	</p>
-	<% end %>
 
+	<% if current_user.id == c.user.id %>
+	<%= link_to 'Edit this comment', edit_comment_path(c) %>
+		<% end %>
+		<br>
+		<%= render 'comments' %>
+
+	<% end %>
 </div>
+	<% if current_user.id == @post.user.id %>
+	<%= link_to 'Edit this post', edit_post_path(@post) %>
+		<% end %>
+		<br>
+		<%= render 'comments' %>
+
+		
+
+
+
 <p>
-	<%= link_to 'Back to all posts', posts_path%>
+	<%= link_to 'Back to all posts', posts_path %>
 </p>

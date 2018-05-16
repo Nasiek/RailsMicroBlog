@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 def myprofile
 @user = current_user
 
+
 end
 
   def show
@@ -20,6 +21,10 @@ end
 
 
   end
+
+def all 
+@user = User.all
+end
 
   def new
    @user = User.new
@@ -37,9 +42,17 @@ end
   end
 
   def edit
+    @user = User.find(params[:id])
+
   end
 
   def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to myprofile_path 
+    else
+      render :edit
+    end
   end
 
   def delete

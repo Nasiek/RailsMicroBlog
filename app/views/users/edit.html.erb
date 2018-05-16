@@ -1,3 +1,21 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<p> We understand. You want to change your information. Fine. Here you go.
+</p>
+
+
+
+<%= form_for @user do |f| %>
+<p><%= f.label "First Name" %></p>
+  <p> <%= f.text_area :fname %> </p>
+<p> <%= f.label "Username" %> </p>
+  <p> <%= f.text_area :username %> </p>
+<p> <%= f.label "Email" %> </p>
+  <p> <%= f.text_area :email %> </p>
+<p> <%= f.label "Home" %> </p>
+  <p> <%= f.text_area :home %> </p>
+<p> <%= f.label "Password" %> </p>
+  <p> <%= f.text_area :password %> </p>
+
+
+  <%= f.submit "Update" %>
+<% end %>
 

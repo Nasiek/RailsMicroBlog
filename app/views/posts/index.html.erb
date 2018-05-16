@@ -7,6 +7,7 @@
 <% @posts.each do |post|%>
 <div id="post_container">
 	<h2><%= post.topic %> </h2>
+	<p> <strong>by <%= post.user.fname %></p>	
 </div>
 <div id="post_content">
 	<%= truncate(post.content, length: 75) %>
@@ -15,3 +16,4 @@
 	<%= link_to 'Go to Full Post', post_path(post) %>
 </div>
 <%end%>
+<h2> <%= link_to "See all Users", "/users/all" %> </h2>

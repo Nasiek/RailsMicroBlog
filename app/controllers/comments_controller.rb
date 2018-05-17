@@ -42,6 +42,10 @@ end
   end
 
   def destroy
+    find_comment
+    @post = @comment.post
+    Comment.delete(params[:id])
+      redirect_to post_path(@post)
   end
 
 private 

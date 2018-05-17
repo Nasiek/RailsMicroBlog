@@ -9,13 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <% if session[:user_id] != nil %>
-  <div class="nav"><nav>
+  <div class="nav-wrapper"><nav>
+  <ul>
   <li><%= link_to 'Scoop', '/' %></li>
   <li><%= link_to 'All Posts', posts_path  %></li>
   <li><%= link_to 'All Users', users_all_path %></li>
   <li><%= link_to 'Your Home Page', myprofile_path %></li>
   <li><%= link_to 'Sign Out',logout_path, method: :delete %></li>
-
+</ul>
   </nav>
   </div>
   <% end %>
